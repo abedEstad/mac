@@ -1,9 +1,9 @@
 import streamlit as st
 from openpyxl import reader,load_workbook,Workbook
 
-st.title(“FK_KM CHECK”)
+st.title('FK_KM CHECK')
 
-fkonzept = st.file_uploader(“upload FK file”, type={“xlsx”,“csv”, “txt”})
+fkonzept = st.file_uploader('upload FK file', type={'xlsx','csv'})
 
 wb=Workbook()
 
@@ -13,10 +13,10 @@ st.write(wb.sheetnames)
 st.title(wb)
 st.write(wb.active)
 
-wb.save(‘fk.xlsx’)
+wb.save('fk.xlsx')
 
 st.download_button(
-label=“Download Excel worksheet without index”,
+label='Download Excel worksheet without index',
 data=buffer,
-file_name=“fk.xlsx”,
-mime=“application/vnd.ms-excel”,)
+file_name='fk.xlsx'
+mime='application/vnd.ms-excel',)
